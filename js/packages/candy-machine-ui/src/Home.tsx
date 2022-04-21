@@ -397,7 +397,7 @@ const Home = (props: HomeProps) => {
   return (
     <Container style={{ marginTop: 0 }}>
       <Navbar />
-      <Hero candyMachine={candyMachine} isUserMinting={isUserMinting} setIsUserMinting={setIsUserMinting} onMint={onMint} isActive={isActive} isPresale={isPresale}/>
+      <Hero candyMachine={candyMachine} isUserMinting={isUserMinting} setIsUserMinting={setIsUserMinting} onMint={onMint} isActive={isActive} isPresale={isPresale} MintContainer={MintContainer} GatewayProvider={GatewayProvider} PublicKey={PublicKey} CANDY_MACHINE_PROGRAM={CANDY_MACHINE_PROGRAM} wallet={wallet} rpcUrl={rpcUrl} setAlertState={setAlertState} sendTransaction={sendTransaction} props={props} ConnectButton={ConnectButton} itemsRemaining={itemsRemaining} discountPrice={discountPrice} formatNumber={formatNumber} endDate={endDate} MintCountdown={MintCountdown} getCountdownDate={getCountdownDate} toggleMintButton={toggleMintButton}/>
       <AboutUs />
       <RoadMap />
       <Team />
@@ -615,7 +615,6 @@ const Home = (props: HomeProps) => {
           >
             Powered by METAPLEX
           </Typography>
-        <h1 className="text-blue-300"> Test </h1>
 	</Paper>
       </Container>
 
