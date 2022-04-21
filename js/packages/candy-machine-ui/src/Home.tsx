@@ -397,12 +397,12 @@ const Home = (props: HomeProps) => {
   return (
     <Container style={{ marginTop: 0 }}>
       <Navbar />
-      <Hero candyMachine={candyMachine} isUserMinting={isUserMinting} setIsUserMinting={setIsUserMinting} onMint={onMint} isActive={isActive} isPresale={isPresale} MintContainer={MintContainer} GatewayProvider={GatewayProvider} PublicKey={PublicKey} CANDY_MACHINE_PROGRAM={CANDY_MACHINE_PROGRAM} wallet={wallet} rpcUrl={rpcUrl} setAlertState={setAlertState} sendTransaction={sendTransaction} props={props} ConnectButton={ConnectButton} itemsRemaining={itemsRemaining} discountPrice={discountPrice} formatNumber={formatNumber} endDate={endDate} MintCountdown={MintCountdown} getCountdownDate={getCountdownDate} toggleMintButton={toggleMintButton}/>
+      <Hero />
       <AboutUs />
       <RoadMap />
       <Team />
       <FAQ />
-      <Container maxWidth="xs" style={{ position: 'relative' }}>
+      <Container maxWidth="xs" style={{ position: 'absolute', top: '150px', right: '5px' }}>
         <Paper
           style={{
             padding: 24,

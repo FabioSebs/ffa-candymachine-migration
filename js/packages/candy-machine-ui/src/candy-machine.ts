@@ -291,7 +291,7 @@ export const createAccountsForMint = async (
   )[0];
 
   const signers: anchor.web3.Keypair[] = [mint];
-  const instructions = [
+  const instructions : any = [
     anchor.web3.SystemProgram.createAccount({
       fromPubkey: payer,
       newAccountPubkey: mint.publicKey,
@@ -363,9 +363,9 @@ export const mintOneToken = async (
     : payer;
 
   const candyMachineAddress = candyMachine.id;
-  const remainingAccounts = [];
-  const cleanupInstructions = [];
-  const instructions = [];
+  const remainingAccounts : any = [];
+  const cleanupInstructions : any = [];
+  const instructions : any = [];
   const signers: anchor.web3.Keypair[] = [];
   console.log('SetupState: ', setupState);
   if (!setupState) {
