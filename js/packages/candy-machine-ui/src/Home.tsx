@@ -1,6 +1,12 @@
 import { useEffect, useMemo, useState, useCallback } from 'react';
 import * as anchor from '@project-serum/anchor';
-
+// import './main.css'
+import FAQ from './components/faq';
+import Navbar from './components/navbar.js'
+import Hero from './components/hero'
+import AboutUs from './components/aboutUs'
+import RoadMap from './components/roadMap'
+import Team from './components/team'
 import styled from 'styled-components';
 import { Container, Snackbar } from '@material-ui/core';
 import Paper from '@material-ui/core/Paper';
@@ -389,7 +395,13 @@ const Home = (props: HomeProps) => {
   ]);
 
   return (
-    <Container style={{ marginTop: 100 }}>
+    <Container style={{ marginTop: 0 }}>
+      <Navbar />
+      <Hero candyMachine={candyMachine} isUserMinting={isUserMinting} setIsUserMinting={setIsUserMinting} onMint={onMint} isActive={isActive} isPresale={isPresale}/>
+      <AboutUs />
+      <RoadMap />
+      <Team />
+      <FAQ />
       <Container maxWidth="xs" style={{ position: 'relative' }}>
         <Paper
           style={{
@@ -603,7 +615,8 @@ const Home = (props: HomeProps) => {
           >
             Powered by METAPLEX
           </Typography>
-        </Paper>
+        <h1 className="text-blue-300"> Test </h1>
+	</Paper>
       </Container>
 
       <Snackbar
