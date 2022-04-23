@@ -402,7 +402,7 @@ const Home = (props: HomeProps) => {
       <RoadMap />
       <Team />
       <FAQ />
-      <Container maxWidth="xs" style={{ position: 'absolute', top: '250px', right: '85px' }}>
+      <Container maxWidth="xs" style={{ position: 'absolute', top: '200px', right: '5px', width:'250px' }}>
         <Paper
           style={{
             padding: 24,

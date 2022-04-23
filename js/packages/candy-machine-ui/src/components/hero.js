@@ -1,9 +1,9 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
 import CardMembershipIcon from '@mui/icons-material/CardMembership';
 import NFT from "../assets/NFT.png"
 
-const Hero = ()  => {
+const Hero = () => {
 
     const [mintTime, setMintTime] = useState(false)
     const [days, setDays] = useState(0)
@@ -42,13 +42,14 @@ const Hero = ()  => {
     }, [])
     return (
         <>
-            <div className="mx-12 md:h-[600px] h-[280px] relative">
-                {/* Connect wallet button */}
-                <div className="flex justify-end absolute top-[75px] h-full w-full">
-                    <img src={NFT} alt="nft" className='relative h-[60 px] w-[60px] '/>
 
-                    
-                </div>
+            {/* Connect wallet button */}
+            <div className="w-full h-[100px] relative flex justify-end">
+                <img src={NFT} alt="nft" height={100} width={100} className="mx-5 relative" />
+            </div>
+
+            <div className="mx-12 md:h-[600px] h-[280px] relative">
+
 
                 {/* Welcome text */}
                 <div className="lg:text-[90px] md:text-[80px] text-[35px] font-bold mt-10 ">
