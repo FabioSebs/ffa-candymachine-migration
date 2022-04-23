@@ -45,7 +45,8 @@ const Hero = () => {
 
             {/* Connect wallet button */}
             <div className="w-full h-[100px] relative flex justify-end">
-                <img src={NFT} alt="nft" height={100} width={100} className="mx-5 relative" />
+                <h1 className='top-10 relative text-white'>Powered By</h1>
+                <img src={NFT} alt="nft" height={100} width={100} className="mr-5 relative invert" />
             </div>
 
             <div className="mx-12 md:h-[600px] h-[280px] relative">
