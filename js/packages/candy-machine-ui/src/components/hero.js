@@ -42,10 +42,10 @@ const Hero = ()  => {
     }, [])
     return (
         <>
-            <div className="mx-12 md:h-[600px] h-[280px]">
+            <div className="mx-12 md:h-[600px] h-[280px] relative">
                 {/* Connect wallet button */}
-                <div className="mr-1 flex justify-end absolute right-10 top-[125px]">
-                    <img src={NFT} alt="nft" className='h-[50px] w-[50px] relative'/>
+                <div className="flex justify-end absolute top-[75px] h-full w-full">
+                    <img src={NFT} alt="nft" className='relative h-[60 px] w-[60px] '/>
 
                     
                 </div>
