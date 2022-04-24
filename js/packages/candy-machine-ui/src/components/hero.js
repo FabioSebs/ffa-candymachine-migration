@@ -60,7 +60,7 @@ const Hero = () => {
 
 
                 {mintTime ? (
-                    <h1>lolz</h1>
+                    <h1>We need to come up with something other than the mint button</h1>
 
                 ) : (
                     <>
@@ -76,8 +76,6 @@ const Hero = () => {
 
                     </>
                 )}
-
-
             </div>
         </>
     );
