@@ -121,7 +121,7 @@ const RoadMap = () => {
 
     // JSX
     return (
-        <div className="bg-black bg-opacity-60 md:top-[30px] top-[-30px] relative">
+        <div className="bg-black bg-opacity-60 md:top-[30px] top-[-30px] relative text-white">
 
             {/* TITLE */}
             <div id="map" className="h-[150px] flex items-center justify-center mb-10">

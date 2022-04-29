@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
 import CardMembershipIcon from '@mui/icons-material/CardMembership';
 import NFT from "../assets/NFT.png"
@@ -41,12 +41,12 @@ const Hero = () => {
         return () => clearInterval(interval)
     }, [])
     return (
-        <>
+        <div>
 
             {/* Connect wallet button */}
             <div className="w-full h-[100px] relative flex justify-end">
-                <h1 className='top-10 relative text-white'>Powered By</h1>
-                <img src={NFT} alt="nft" height={100} width={100} className="mr-5 relative invert" />
+                <h1 className='top-10 relative text-white'>As Seen On</h1>
+                <img src={NFT} alt="nft" height={100} width={100} className="xl:mr-[-100px] mr-9 relative invert" />
             </div>
 
             <div className="mx-12 md:h-[600px] h-[280px] relative">
@@ -77,7 +77,7 @@ const Hero = () => {
                     </>
                 )}
             </div>
-        </>
+        </div>
     );
 }
 

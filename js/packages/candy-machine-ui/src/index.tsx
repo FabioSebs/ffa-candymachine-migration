@@ -4,10 +4,12 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
 import './output.css';
+// import Logo from './components/bouncyDiscLogo';
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
+    {/* <Logo /> */}
   </React.StrictMode>,
   document.getElementById('root'),
 );

@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState, useCallback } from 'react';
+import { useEffect, useMemo, useState, useCallback, useContext } from 'react';
 import * as anchor from '@project-serum/anchor';
 // import './main.css'
 import FAQ from './components/faq';
@@ -7,6 +7,8 @@ import Hero from './components/hero'
 import AboutUs from './components/aboutUs'
 import RoadMap from './components/roadMap'
 import Team from './components/team'
+import Footer from './components/footer'
+// import Logo from './components/bouncyDiscLogo'
 import styled from 'styled-components';
 import { Container, Snackbar } from '@material-ui/core';
 import Paper from '@material-ui/core/Paper';
@@ -44,7 +46,6 @@ const ConnectButton = styled(WalletDialogButton)`
 `;
 
 const MintContainer = styled.div``; // add your owns styles here
-
 export interface HomeProps {
   candyMachineId?: anchor.web3.PublicKey;
   connection: anchor.web3.Connection;
@@ -395,14 +396,17 @@ const Home = (props: HomeProps) => {
   ]);
 
   return (
-    <Container style={{ marginTop: 0 }}>
+    <Container style={{ marginTop: 0 , position: "relative"}}>
       <Navbar />
+      {/* <Logo /> */}
       <Hero />
       <AboutUs />
       <RoadMap />
       <Team />
       <FAQ />
-      <Container maxWidth="xs" style={{ position: 'absolute', top: '200px', right: '5px', width:'250px' }}>
+      <Footer />
+      
+      <Container maxWidth="xs" style={{ position: 'absolute', top: '200px', width:'250px' }} className={`right-10`}>
         <Paper
           style={{
             padding: 24,

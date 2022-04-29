@@ -3,8 +3,8 @@ import NichoFox from '../assets/FancyFoxAKing.png';
 import Nicho from '../assets/nicho.png'
 import DennisFox from '../assets/FancyFoxAPIRATE.png';
 import Dennis from '../assets/den.png';
-import Monique from '../assets/chef_NFT_yellow_bg.png';
-import MoniqueFox from '../assets/monique.png';
+import Monique from '../assets/monique.png';
+import MoniqueFox from '../assets/chef_NFT_yellow_bg.png';
 import FabioFox from '../assets/astronaut_NFT_galaxy_bg.png';
 import Fabio from '../assets/fabio.png';
 import JocelynFox from '../assets/raincoat_bird_pink_bg.png';
@@ -92,7 +92,7 @@ const Team = () => {
             <div id="team" className="flex flex-col mx-10 md:my-5 justify-center items-center">
                 {/* FFA FAMILY */}
                 <div className="flex flex-col justify-center mt-20">
-                    <h3 className="text-5xl font-['Atmospheric']"><span className="text-orange-500 font-bold">FFA</span> Family</h3>
+                    <h3 className="text-5xl font-['Atmospheric'] text-white"><span className="text-orange-500 font-bold">FFA</span> FAMILY</h3>
                     <h5 className='text-center'>*Click to know more about us!</h5>
                 </div>
 
