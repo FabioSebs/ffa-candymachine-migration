@@ -2,9 +2,12 @@ import React, { useEffect, useState, useContext } from 'react';
 import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
 import CardMembershipIcon from '@mui/icons-material/CardMembership';
 import NFT from "../assets/NFT.png"
+import { useSelector, useDispatch } from 'react-redux';
+import { timeAction } from '../reducers/time'
 
 const Hero = () => {
-
+    const dispatch = useDispatch();
+    const time = useSelector((state) => state.time.value)
     const [mintTime, setMintTime] = useState(false)
     const [days, setDays] = useState(0)
     const [hours, setHours] = useState(0)
@@ -13,7 +16,7 @@ const Hero = () => {
 
     useEffect(() => {
 
-        const target = new Date("5/31/2022 00:00:00")
+        const target = new Date("3/31/2022 00:00:00")
 
         const interval = setInterval(() => {
             const now = new Date()
@@ -35,8 +38,8 @@ const Hero = () => {
 
             if (d <= 0 && h <= 0 && m <= 0 && s <= m) {
                 setMintTime(true)
+                dispatch(timeAction({mintTime: mintTime}))
             }
-
         }, 1000)
         return () => clearInterval(interval)
     }, [])
@@ -60,8 +63,7 @@ const Hero = () => {
 
 
                 {mintTime ? (
-                    <h1>We need to come up with something other than the mint button</h1>
-
+                    <h1></h1>
                 ) : (
                     <>
                         <div className='h-[400px] w-[100%] md:flex md:flex-col justify-center items-center  md:bottom-20 relative'>

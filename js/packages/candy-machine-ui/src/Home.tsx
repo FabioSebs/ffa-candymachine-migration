@@ -13,6 +13,7 @@ import styled from 'styled-components';
 import { Container, Snackbar } from '@material-ui/core';
 import Paper from '@material-ui/core/Paper';
 import Alert from '@material-ui/lab/Alert';
+import { useSelector } from 'react-redux';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { PublicKey, Transaction } from '@solana/web3.js';
@@ -54,6 +55,7 @@ export interface HomeProps {
 }
 
 const Home = (props: HomeProps) => {
+  const time = useSelector((state : any) => state.time.value)
   const [isUserMinting, setIsUserMinting] = useState(false);
   const [candyMachine, setCandyMachine] = useState<CandyMachineAccount>();
   const [alertState, setAlertState] = useState<AlertState>({
@@ -406,7 +408,7 @@ const Home = (props: HomeProps) => {
       <FAQ />
       <Footer />
       
-      <Container maxWidth="xs" style={{ position: 'absolute', top: '200px', width:'250px' }} className={`right-10`}>
+      <Container maxWidth="xs" style={{ position: 'absolute', top: '200px', width:'250px'}} className={`right-10 `}>
         <Paper
           style={{
             padding: 24,
@@ -617,7 +619,7 @@ const Home = (props: HomeProps) => {
             display="block"
             style={{ marginTop: 7, color: 'grey' }}
           >
-            Powered by METAPLEX
+            Powered by METAPLEX {time.mintTime.toString()}
           </Typography>
 	</Paper>
       </Container>

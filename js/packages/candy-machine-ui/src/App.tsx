@@ -1,6 +1,9 @@
 import './App.css';
 // import './tailwind_generated.css';
 import { useMemo } from 'react';
+import { configureStore } from '@reduxjs/toolkit'
+import { Provider } from 'react-redux';
+import timeReducer from './reducers/time'
 import * as anchor from '@project-serum/anchor';
 import Home from './Home';
 import { DEFAULT_TIMEOUT } from './connection';
@@ -48,6 +51,12 @@ const connection = new anchor.web3.Connection(
   rpcHost ? rpcHost : anchor.web3.clusterApiUrl('devnet'),
 );
 
+const store = configureStore({
+  reducer: {
+    time: timeReducer,
+  },
+})
+
 const App = () => {
   const endpoint = useMemo(() => clusterApiUrl(network), []);
 
@@ -63,20 +72,22 @@ const App = () => {
   );
 
   return (
-    <ThemeProvider theme={theme}>
-      <ConnectionProvider endpoint={endpoint}>
-        <WalletProvider wallets={wallets} autoConnect>
-          <WalletDialogProvider>
-            <Home
-              candyMachineId={candyMachineId}
-              connection={connection}
-              txTimeout={DEFAULT_TIMEOUT}
-              rpcHost={rpcHost}
-            />
-          </WalletDialogProvider>
-        </WalletProvider>
-      </ConnectionProvider>
-    </ThemeProvider>
+    <Provider store={store}>
+      <ThemeProvider theme={theme}>
+        <ConnectionProvider endpoint={endpoint}>
+          <WalletProvider wallets={wallets} autoConnect>
+            <WalletDialogProvider>
+              <Home
+                candyMachineId={candyMachineId}
+                connection={connection}
+                txTimeout={DEFAULT_TIMEOUT}
+                rpcHost={rpcHost}
+              />
+            </WalletDialogProvider>
+          </WalletProvider>
+        </ConnectionProvider>
+      </ThemeProvider>
+    </Provider>
   );
 };
 
