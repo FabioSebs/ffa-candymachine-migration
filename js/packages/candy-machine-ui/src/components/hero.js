@@ -4,8 +4,11 @@ import CardMembershipIcon from '@mui/icons-material/CardMembership';
 import NFT from "../assets/NFT.png"
 import { useSelector, useDispatch } from 'react-redux';
 import { timeAction } from '../reducers/time'
+import { useCookies } from 'react-cookie'
+const change = () => ({mintTime: true})
 
 const Hero = () => {
+    const [cookies, setCookies] = useCookies(false);
     const dispatch = useDispatch();
     const time = useSelector((state) => state.time.value)
     const [mintTime, setMintTime] = useState(false)
@@ -17,7 +20,6 @@ const Hero = () => {
     useEffect(() => {
 
         const target = new Date("3/31/2022 00:00:00")
-
         const interval = setInterval(() => {
             const now = new Date()
             const difference = target.getTime() - now.getTime()
@@ -38,11 +40,17 @@ const Hero = () => {
 
             if (d <= 0 && h <= 0 && m <= 0 && s <= m) {
                 setMintTime(true)
-                dispatch(timeAction({mintTime: mintTime}))
+                
             }
         }, 1000)
+
+        if (mintTime) {
+            setCookies('time', true, {path: '/'})
+            // dispatch(timeAction({mintTime : true}))
+        }
+
         return () => clearInterval(interval)
-    }, [])
+    }, [mintTime])
     return (
         <div>
 

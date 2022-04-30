@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState, useCallback, useContext } from 'react';
 import * as anchor from '@project-serum/anchor';
 // import './main.css'
+import { useCookies } from 'react-cookie';
 import FAQ from './components/faq';
 import Navbar from './components/navbar.js'
 import Hero from './components/hero'
@@ -55,6 +56,7 @@ export interface HomeProps {
 }
 
 const Home = (props: HomeProps) => {
+  const [cookies, setCookie] = useCookies();
   const time = useSelector((state : any) => state.time.value)
   const [isUserMinting, setIsUserMinting] = useState(false);
   const [candyMachine, setCandyMachine] = useState<CandyMachineAccount>();
@@ -398,7 +400,7 @@ const Home = (props: HomeProps) => {
   ]);
 
   return (
-    <Container style={{ marginTop: 0 , position: "relative"}}>
+    <Container style={{ marginTop: 0 , position: "relative", width: "auto"}}>
       <Navbar />
       {/* <Logo /> */}
       <Hero />
@@ -408,7 +410,7 @@ const Home = (props: HomeProps) => {
       <FAQ />
       <Footer />
       
-      <Container maxWidth="xs" style={{ position: 'absolute', top: '200px', width:'250px'}} className={`right-10 `}>
+      <Container maxWidth="xs" style={{ position: 'absolute', top: '600px', width:'850px'}} className={`right-0 ${cookies.time ? "opacity-100": "opacity-0"}`}>
         <Paper
           style={{
             padding: 24,
@@ -619,7 +621,7 @@ const Home = (props: HomeProps) => {
             display="block"
             style={{ marginTop: 7, color: 'grey' }}
           >
-            Powered by METAPLEX {time.mintTime.toString()}
+            Powered by METAPLEX
           </Typography>
 	</Paper>
       </Container>

@@ -4,6 +4,7 @@ import { useMemo } from 'react';
 import { configureStore } from '@reduxjs/toolkit'
 import { Provider } from 'react-redux';
 import timeReducer from './reducers/time'
+import { CookiesProvider } from 'react-cookie';
 import * as anchor from '@project-serum/anchor';
 import Home from './Home';
 import { DEFAULT_TIMEOUT } from './connection';
@@ -72,22 +73,24 @@ const App = () => {
   );
 
   return (
-    <Provider store={store}>
-      <ThemeProvider theme={theme}>
-        <ConnectionProvider endpoint={endpoint}>
-          <WalletProvider wallets={wallets} autoConnect>
-            <WalletDialogProvider>
-              <Home
-                candyMachineId={candyMachineId}
-                connection={connection}
-                txTimeout={DEFAULT_TIMEOUT}
-                rpcHost={rpcHost}
-              />
-            </WalletDialogProvider>
-          </WalletProvider>
-        </ConnectionProvider>
-      </ThemeProvider>
-    </Provider>
+    <CookiesProvider>
+      <Provider store={store}>
+        <ThemeProvider theme={theme}>
+          <ConnectionProvider endpoint={endpoint}>
+            <WalletProvider wallets={wallets} autoConnect>
+              <WalletDialogProvider>
+                <Home
+                  candyMachineId={candyMachineId}
+                  connection={connection}
+                  txTimeout={DEFAULT_TIMEOUT}
+                  rpcHost={rpcHost}
+                />
+              </WalletDialogProvider>
+            </WalletProvider>
+          </ConnectionProvider>
+        </ThemeProvider>
+      </Provider>
+    </CookiesProvider>
   );
 };
 
