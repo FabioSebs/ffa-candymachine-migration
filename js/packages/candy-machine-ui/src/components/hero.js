@@ -19,7 +19,7 @@ const Hero = () => {
 
     useEffect(() => {
 
-        const target = new Date("5/31/2022 00:00:00")
+        const target = new Date("3/31/2022 00:00:00")
         const interval = setInterval(() => {
             const now = new Date()
             const difference = target.getTime() - now.getTime()
@@ -62,9 +62,9 @@ const Hero = () => {
                         <h1 className="lg:text-[90px] md:text-[80px] text-[35px] font-bold font-['Atmospheric'] md:bottom-8 bottom-4 relative text-shadow text-white">ASSOCIATION</h1>
                     </div>
                     {/* Connect wallet button */}
-                    <div className="md:h-[150px] w-full sm:flex sm:flex-row flex-col justify-center text-center relative items-center">
+                    <div className="h-[150px] w-full flex-col text-center relative">
                         <h1 className='md:top-10 md:relative top-0 text-white'>As Seen On</h1>
-                        <img src={NFT} alt="nft" height={100} width={100} className="invert text-center mx-auto" />
+                        <img src={NFT} alt="nft" height={100} width={100} className="invert mx-auto" />
                     </div>
 
                 </div>

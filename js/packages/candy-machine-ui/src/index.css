@@ -47,3 +47,17 @@ code {
   font-family: 'poppins';
   src: url("./fonts/poppins/Poppins Medium 500.ttf");
 }
+
+.mintButton {
+  top: 400px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media (max-width: 500px) {
+  .mintButton {
+    top: 500px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

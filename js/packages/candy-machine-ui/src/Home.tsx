@@ -409,7 +409,7 @@ const Home = (props: HomeProps) => {
       <Team />
       <FAQ />
       <Footer />
-      <Container style={{ position: 'absolute', top: '500px', width:'550px'}} className={` ${cookies.time ? "opacity-100": "opacity-0"}`}>
+      <Container style={{ position: 'absolute', width:'300px'}} className={`mintButton ${cookies.time ? "opacity-100": "opacity-0"}`}>
         <Paper
           style={{
             padding: 24,
