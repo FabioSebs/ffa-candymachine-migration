@@ -5,7 +5,7 @@ import NFT from "../assets/NFT.png"
 import { useSelector, useDispatch } from 'react-redux';
 import { timeAction } from '../reducers/time'
 import { useCookies } from 'react-cookie'
-const change = () => ({mintTime: true})
+const change = () => ({ mintTime: true })
 
 const Hero = () => {
     const [cookies, setCookies] = useCookies(false);
@@ -19,7 +19,7 @@ const Hero = () => {
 
     useEffect(() => {
 
-        const target = new Date("3/31/2022 00:00:00")
+        const target = new Date("5/31/2022 00:00:00")
         const interval = setInterval(() => {
             const now = new Date()
             const difference = target.getTime() - now.getTime()
@@ -40,12 +40,12 @@ const Hero = () => {
 
             if (d <= 0 && h <= 0 && m <= 0 && s <= m) {
                 setMintTime(true)
-                
+
             }
         }, 1000)
 
         if (mintTime) {
-            setCookies('time', true, {path: '/'})
+            setCookies('time', true, { path: '/' })
             // dispatch(timeAction({mintTime : true}))
         }
 
@@ -54,20 +54,22 @@ const Hero = () => {
     return (
         <div>
 
-            {/* Connect wallet button */}
-            <div className="w-full h-[100px] relative flex justify-end">
-                <h1 className='top-10 relative text-white'>As Seen On</h1>
-                <img src={NFT} alt="nft" height={100} width={100} className="xl:mr-[-100px] mr-9 relative invert" />
-            </div>
-
-            <div className="mx-12 md:h-[600px] h-[280px] relative">
-
-
+            <div className="mx-12 md:h-[600px] h-[500px] flex-col w-full lg:justify-between justify-center">
                 {/* Welcome text */}
-                <div className="lg:text-[90px] md:text-[80px] text-[35px] font-bold mt-10 ">
-                    <h1 className="font-['Atmospheric'] text-shadow text-white">FANCY FOX</h1>
-                    <h1 className="font-['Atmospheric'] md:bottom-8 bottom-4 relative text-shadow text-white">ASSOCIATION</h1>
+                <div className="lg:flex lg:flex-row justify-around items-center mt-10 ">
+                    <div>
+                        <h1 className="lg:text-[90px] md:text-[80px] text-[35px] font-bold font-['Atmospheric'] text-shadow text-white">FANCY FOX</h1>
+                        <h1 className="lg:text-[90px] md:text-[80px] text-[35px] font-bold font-['Atmospheric'] md:bottom-8 bottom-4 relative text-shadow text-white">ASSOCIATION</h1>
+                    </div>
+                    {/* Connect wallet button */}
+                    <div className="md:h-[150px] w-full sm:flex sm:flex-row flex-col justify-center text-center relative items-center">
+                        <h1 className='md:top-10 md:relative top-0 text-white'>As Seen On</h1>
+                        <img src={NFT} alt="nft" height={100} width={100} className="invert text-center mx-auto" />
+                    </div>
+
                 </div>
+
+
 
 
                 {mintTime ? (

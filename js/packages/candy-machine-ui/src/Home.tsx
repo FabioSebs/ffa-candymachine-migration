@@ -400,7 +400,7 @@ const Home = (props: HomeProps) => {
   ]);
 
   return (
-    <Container style={{ marginTop: 0 , position: "relative", width: "auto"}}>
+    <Container style={{ marginTop: 0 , position: "relative"}} className="w-full h-full">
       <Navbar />
       {/* <Logo /> */}
       <Hero />
@@ -409,8 +409,7 @@ const Home = (props: HomeProps) => {
       <Team />
       <FAQ />
       <Footer />
-      
-      <Container maxWidth="xs" style={{ position: 'absolute', top: '600px', width:'850px'}} className={`right-0 ${cookies.time ? "opacity-100": "opacity-0"}`}>
+      <Container style={{ position: 'absolute', top: '500px', width:'550px'}} className={` ${cookies.time ? "opacity-100": "opacity-0"}`}>
         <Paper
           style={{
             padding: 24,
@@ -639,6 +638,7 @@ const Home = (props: HomeProps) => {
         </Alert>
       </Snackbar>
     </Container>
+
   );
 };
 
