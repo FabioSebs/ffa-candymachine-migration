@@ -54,16 +54,16 @@ const Hero = () => {
     return (
         <div>
 
-            <div className="mx-12 md:h-[600px] h-[500px] flex-col w-full lg:justify-between justify-center">
+            <div className="mx-12 md:h-[470px] h-[500px] flex-col w-full lg:justify-between justify-center">
                 {/* Welcome text */}
-                <div className="lg:flex lg:flex-row justify-around items-center mt-10 ">
+                <div className="lg:flex lg:flex-row justify-around items-center mt-10 w-full ">
                     <div>
                         <h1 className="lg:text-[90px] md:text-[80px] text-[35px] font-bold font-['Atmospheric'] text-shadow text-white">FANCY FOX</h1>
                         <h1 className="lg:text-[90px] md:text-[80px] text-[35px] font-bold font-['Atmospheric'] md:bottom-8 bottom-4 relative text-shadow text-white">ASSOCIATION</h1>
                     </div>
                     {/* Connect wallet button */}
-                    <div className="h-[150px] w-full flex-col text-center relative">
-                        <h1 className='md:top-10 md:relative top-0 text-white'>As Seen On</h1>
+                    <div className="h-[150px] flex-col text-center -translate-x-8">
+                        <h1 className='text-white md:invisible lg:visible visible'>As Seen On</h1>
                         <img src={NFT} alt="nft" height={100} width={100} className="invert mx-auto" />
                     </div>
 
