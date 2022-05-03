@@ -4,11 +4,11 @@ import CardMembershipIcon from '@mui/icons-material/CardMembership';
 import NFT from "../assets/NFT.png"
 import { useSelector, useDispatch } from 'react-redux';
 import { timeAction } from '../reducers/time'
-import { useCookies } from 'react-cookie'
+import {useCookies } from 'react-cookie'
 const change = () => ({ mintTime: true })
 
 const Hero = () => {
-    const [cookies, setCookies] = useCookies(false);
+    const [cookies, setCookies, removeCookies] = useCookies(false);
     const dispatch = useDispatch();
     const time = useSelector((state) => state.time.value)
     const [mintTime, setMintTime] = useState(false)
@@ -18,8 +18,7 @@ const Hero = () => {
     const [seconds, setSeconds] = useState(0)
 
     useEffect(() => {
-
-        const target = new Date("3/31/2022 00:00:00")
+        const target = new Date("6/01/2022 00:00:00")
         const interval = setInterval(() => {
             const now = new Date()
             const difference = target.getTime() - now.getTime()
@@ -44,9 +43,11 @@ const Hero = () => {
             }
         }, 1000)
 
-        if (mintTime) {
+        if(mintTime) {
             setCookies('time', true, { path: '/' })
             // dispatch(timeAction({mintTime : true}))
+        } else {
+            removeCookies('time')
         }
 
         return () => clearInterval(interval)
@@ -54,9 +55,9 @@ const Hero = () => {
     return (
         <div>
 
-            <div className="mx-12 md:h-[470px] h-[500px] flex-col w-full lg:justify-between justify-center">
+            <div className={`mx-12 ${cookies.time ? 'md:h-[470px]' : `md:h-[550px]`} h-[500px] flex-col w-full lg:justify-between justify-center`}>
                 {/* Welcome text */}
-                <div className="lg:flex lg:flex-row justify-around items-center mt-10 w-full ">
+                <div className="lg:flex lg:flex-row justify-around items-center mt-10 w-full">
                     <div>
                         <h1 className="lg:text-[90px] md:text-[80px] text-[35px] font-bold font-['Atmospheric'] text-shadow text-white">FANCY FOX</h1>
                         <h1 className="lg:text-[90px] md:text-[80px] text-[35px] font-bold font-['Atmospheric'] md:bottom-8 bottom-4 relative text-shadow text-white">ASSOCIATION</h1>
@@ -88,6 +89,7 @@ const Hero = () => {
 
                     </>
                 )}
+
             </div>
         </div>
     );
