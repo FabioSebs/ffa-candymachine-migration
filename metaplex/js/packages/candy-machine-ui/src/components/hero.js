@@ -18,13 +18,13 @@ const Hero = () => {
     const [seconds, setSeconds] = useState(0)
 
     useEffect(() => {
-        const target = new Date("5/01/2022 00:00:00")
+        const target = new Date("5/31/2022 19:00:00")
         const interval = setInterval(() => {
             const now = new Date()
             const difference = target.getTime() - now.getTime()
 
             const d = Math.floor(difference / (1000 * 60 * 60 * 24))
-            setDays(d)
+            setDays(d+1)
             const h = Math.floor(
                 (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
             );
