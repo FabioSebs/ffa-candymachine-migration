@@ -47,7 +47,7 @@ const ConnectButton = styled(WalletDialogButton)`
   font-weight: bold;
 `;
 
-const MintContainer = styled.div``; // add your owns styles here
+const MintContainer = styled.div`margin-x: -10px`; // add your owns styles here
 export interface HomeProps {
   candyMachineId?: anchor.web3.PublicKey;
   connection: anchor.web3.Connection;
@@ -409,7 +409,7 @@ const Home = (props: HomeProps) => {
       <Team />
       <FAQ />
       <Footer />
-      <Container style={{ position: 'absolute', width:'300px'}} className={`mintButton ${cookies.time ? "opacity-100": "opacity-0"}`}>
+      <Container style={{ position: 'absolute', width:'450px'}} className={`mintButton ${cookies.time ? "opacity-100": "opacity-0"}`}>
         <Paper
           style={{
             padding: 24,

@@ -47,12 +47,12 @@ const FAQ = () => {
             rowContentTextSize: '15px',
             // rowContentPaddingTop: '10px',
             rowContentPaddingBottom: '10px',
-            // rowContentPaddingLeft: '50px',
+            // rowContentPaddingLeft: '40px',
             rowContentPaddingRight: '100px',
             arrowColor: "orange",
             transitionDuration: "0.5s",
             timingFunc: "ease-in-out",
-            bgColor: "rgba(0,0,0,0.5)",
+            // bgColor: "rgba(0,0,0,0.5)",
         }
     };
 
@@ -63,8 +63,8 @@ const FAQ = () => {
     };
 
     return (
-        <div className="relative inline-block mb-10 w-[100%] flex justify-center">
-            <div id="faq" className="h-[550px] mb-10 px-10 flex items-center text-[10px]">
+        <div className="relative inline-block px-10 mb-10 w-[100%] flex justify-center">
+            <div id="faq" className="h-[550px] bg-faq-bg mb-10 px-10 flex items-center text-[10px]">
                 <Faq data={data} config={config} styles={data.styles} />
             </div>
         </div>

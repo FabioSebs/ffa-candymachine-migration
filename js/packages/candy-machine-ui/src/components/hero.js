@@ -18,7 +18,7 @@ const Hero = () => {
     const [seconds, setSeconds] = useState(0)
 
     useEffect(() => {
-        const target = new Date("6/01/2022 00:00:00")
+        const target = new Date("5/01/2022 00:00:00")
         const interval = setInterval(() => {
             const now = new Date()
             const difference = target.getTime() - now.getTime()
