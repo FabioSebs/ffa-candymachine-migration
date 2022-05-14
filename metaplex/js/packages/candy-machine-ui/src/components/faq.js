@@ -64,7 +64,7 @@ const FAQ = () => {
 
     return (
         <div className="relative inline-block px-10 mb-10 w-[100%] flex justify-center">
-            <div id="faq" className="h-[550px] bg-faq-bg mb-10 px-10 flex items-center text-[10px]">
+            <div id="faq" className="h-[550px] mb-10 px-10 flex items-center text-[10px]">
                 <Faq data={data} config={config} styles={data.styles} />
             </div>
         </div>
